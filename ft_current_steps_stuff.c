@@ -1,6 +1,6 @@
 #include "includes/main_header.h"
 
-void		ft_pick_stuff(int *current_step, int *player)
+void		ft_current_steps_stuff(int *current_step, int *player)
 {
 	int stuff_choice;
 	
@@ -15,6 +15,8 @@ void		ft_pick_stuff(int *current_step, int *player)
 			{	
 				stuff_choice = rand() % 4 + 1;
 				ft_stuff_selector(stuff_choice, *current_step, (*player) + 1);
+				(*current_step)++;
+			if (stuff_choice == 4)
 				(*current_step)++;
 			}
 		}

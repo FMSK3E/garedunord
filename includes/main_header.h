@@ -59,7 +59,7 @@ t_characters players[2];
 
 void		Init(void);
 
-void		ft_pick_stuff(int *current_step, int *player);
+void		ft_current_steps_stuff(int *current_step, int *player);
 void		ft_stuff_selector(int choice, int step, int player);
 void		ft_step_offensive(int choice, int player);
 void		ft_step_defensive(int choice, int step, int player);
