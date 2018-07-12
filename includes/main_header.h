@@ -60,9 +60,14 @@ t_characters players[2];
 void		Init(void);
 
 void		ft_current_steps_stuff(int *current_step, int *player);
-void		ft_stuff_selector(int choice, int step, int player);
-void		ft_step_offensive(int choice, int player);
-void		ft_step_defensive(int choice, int step, int player);
+void		ft_step1_stuff(int *current_step, int *player);
+void		ft_step2_stuff(int *current_step, int *player);
+void		ft_step3_stuff(int *current_step, int *player);
+
+void		ft_stuff_selector(char choice, int step, int player);
+void		ft_step_offensive(char choice, int player);
+void		ft_step_defensive(char choice, int step, int player);
+
 void 		ft_print_offensive(t_offensive weapon);
 void 		ft_print_defensive(t_defensive protection);
 

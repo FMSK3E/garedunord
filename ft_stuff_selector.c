@@ -1,6 +1,6 @@
 #include "includes/main_header.h"
 
-void		ft_stuff_selector(int choice, int step, int player)
+void		ft_stuff_selector(char choice, int step, int player)
 {
 	if (step == 1)
 		ft_step_offensive(choice, player);
@@ -8,9 +8,9 @@ void		ft_stuff_selector(int choice, int step, int player)
 		ft_step_defensive(choice, step, player);
 }
 
-void		ft_step_offensive(int choice, int player)
+void		ft_step_offensive(char choice, int player)
 {
-		if (choice == 0)
+		if (choice == '0')
 		{	
 			ft_print_offensive(sword);
 			ft_print_offensive(axe);
@@ -18,32 +18,32 @@ void		ft_step_offensive(int choice, int player)
 			ft_print_offensive(bow);
 			ft_print_offensive(daggers);
 		}
-		else if (choice == 1)
+		else if (choice == '1')
 			players[player].weapon = sword;	
-		else if (choice == 2)
+		else if (choice == '2')
 			players[player].weapon = axe;	
-		else if (choice == 3)
+		else if (choice == '3')
 			players[player].weapon = spear;	
-		else if (choice == 4)
+		else if (choice == '4')
 			players[player].weapon = bow;	
-		else if (choice == 5)
+		else if (choice == '5')
 			players[player].weapon = daggers;	
 }
 
-void		ft_step_defensive(int choice, int step, int player)
+void		ft_step_defensive(char choice, int step, int player)
 {
 		if (step == 2)
 		{
-			if (choice == 0)
+			if (choice == '0')
 			{
 				ft_print_defensive(small_shield);
 				ft_print_defensive(large_shield);
 			}
-			else if (choice == 1)
+			else if (choice == '1')
 				players[player].shield = small_shield;	
-			else if (choice == 2)
+			else if (choice == '2')
 				players[player].shield = large_shield;
-			else if (choice == 3)
+			else if (choice == '3')
 			{
 				strcpy(players[player].shield.name, "NULL");
 				players[player].shield.def = 0;
@@ -52,16 +52,16 @@ void		ft_step_defensive(int choice, int step, int player)
 		}
 		else if (step == 3)
 		{
-			if (choice == 0)
+			if (choice == '0')
 			{
 				ft_print_defensive(light_armor);	
 				ft_print_defensive(heavy_armor);
 			}
-			else if (choice == 1)
+			else if (choice == '1')
 				players[player].armor = light_armor;	
-			else if (choice == 2)
+			else if (choice == '2')
 				players[player].armor = heavy_armor;	
-			else if (choice == 3)	
+			else if (choice == '3')	
 			{
 				strcpy(players[player].armor.name, "NULL");
 				players[player].armor.def = 0;
