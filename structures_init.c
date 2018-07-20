@@ -2,7 +2,7 @@
 
 t_characters	*characters_init(void)
 {
-	t_characters	*character;	
+	t_characters	*character;
 
 	character = malloc(sizeof(t_characters));
 	character->hp = 100;
@@ -28,7 +28,7 @@ t_offensive		*offensive_init(char *name, int atk, int min_range, int max_range, 
 t_defensive		*defensive_init(char *name, int def, int movement_malus)
 {
 	t_defensive		*protection;
-	
+
 	protection = malloc(sizeof(t_defensive));
 	strcpy(protection->name, name);
 	protection->def = def;

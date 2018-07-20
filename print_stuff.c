@@ -1,6 +1,6 @@
 #include "includes/main_header.h"
 
-void		ft_print_stuff(t_characters *player, t_characters *enemy)
+void			ft_print_stuff(t_characters *player, t_characters *enemy)
 {
 	printf("%s\t", player->weapon.name);
 	printf("%s\t", player->shield.name);
@@ -10,8 +10,8 @@ void		ft_print_stuff(t_characters *player, t_characters *enemy)
 	printf("%s\n\n", enemy->armor.name);
 }
 
-void 		ft_print_offensive(t_offensive weapon)
-{	
+void			ft_print_offensive(t_offensive weapon)
+{
 	printf("weapon's name : %s\n", weapon.name);
 	printf("weapon's atk : %d\n", weapon.atk);
 	printf("weapon's minimum range : %d\n", weapon.weapon_min_range);
@@ -25,7 +25,7 @@ void 		ft_print_offensive(t_offensive weapon)
 		printf("\n");
 }
 
-void 		ft_print_defensive(t_defensive protection)
+void			ft_print_defensive(t_defensive protection)
 {
 	printf("protection's name : %s\n", protection.name);
 	printf("protection's def : %d\n", protection.def);
