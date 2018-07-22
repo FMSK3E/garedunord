@@ -12,8 +12,8 @@ typedef struct		s_offensive
 {
 	char	name[15];
 	int		atk;
-	int		weapon_min_range;
-	int		weapon_max_range;
+	int		min_range;
+	int		max_range;
 	int		crit_chance;
 	int		can_attack_twice;
 }					t_offensive;
@@ -53,4 +53,9 @@ void			ft_print_offensive(t_offensive weapon);
 void			ft_print_defensive(t_defensive protection);
 void			ft_print_stuff(t_characters *player, t_characters *enemy);
 
+//				turns.c
+void			turns(t_characters *player, t_characters *enemy);
+void			player_turn(int *range, t_characters *player, t_characters *enemy);
+void			enemy_turn(int *range, t_characters *player, t_characters *enemy);
+void			endgame(t_characters *player, t_characters *enemy);
 #endif

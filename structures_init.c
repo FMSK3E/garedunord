@@ -18,8 +18,8 @@ t_offensive		*offensive_init(char *name, int atk, int min_range, int max_range, 
 	weapon = malloc(sizeof(t_offensive));
 	strcpy(weapon->name, name);
 	weapon->atk = atk;
-	weapon->weapon_min_range = min_range;
-	weapon->weapon_max_range = max_range;
+	weapon->min_range = min_range;
+	weapon->max_range = max_range;
 	weapon->crit_chance = crit_chance;
 	weapon->can_attack_twice = can_attack_twice;
 	return (weapon);

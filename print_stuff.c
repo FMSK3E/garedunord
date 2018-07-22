@@ -1,10 +1,12 @@
 #include "includes/main_header.h"
 
 void			ft_print_stuff(t_characters *player, t_characters *enemy)
-{
+{	
+	printf("%d\t", player->hp);
 	printf("%s\t", player->weapon.name);
 	printf("%s\t", player->shield.name);
 	printf("%s\n", player->armor.name);
+	printf("%d\t", enemy->hp);
 	printf("%s\t", enemy->weapon.name);
 	printf("%s\t", enemy->shield.name);
 	printf("%s\n\n", enemy->armor.name);
@@ -14,8 +16,8 @@ void			ft_print_offensive(t_offensive weapon)
 {
 	printf("weapon's name : %s\n", weapon.name);
 	printf("weapon's atk : %d\n", weapon.atk);
-	printf("weapon's minimum range : %d\n", weapon.weapon_min_range);
-	printf("weapon's maximum range : %d\n", weapon.weapon_max_range);
+	printf("weapon's minimum range : %d\n", weapon.min_range);
+	printf("weapon's maximum range : %d\n", weapon.max_range);
 	printf("weapon's critical strike chance : %d\n", weapon.crit_chance);
 	if (strstr(weapon.name, "daggers"))
 		printf("The weapon attacks twice !\n\n");

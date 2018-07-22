@@ -21,6 +21,7 @@ int		main(void)
 	printf("\n\nNARRATOR : Welcome to Gare du Nord v2 !\n");
 	ft_stuff_steps(&current_step, player, enemy, sword, axe, spear, bow, daggers, small_shield, large_shield, light_armor, heavy_armor, no_protection);
 	printf("NARRATOR : Now that both of you have stuff, fight to death ! owo\n");
+	turns(player, enemy);
 	free(player);
 	free(enemy);
 	free(sword);
