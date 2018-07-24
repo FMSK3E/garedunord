@@ -1,12 +1,13 @@
 #include "includes/main_header.h"
 
-void			ft_print_stuff(t_characters *player, t_characters *enemy)
+void			ft_print_stuff(int *range, t_characters *player, t_characters *enemy)
 {	
-	printf("%d\t", player->hp);
+	printf("CURRENT RANGE : %d\n", *range);
+	printf("PLAYER INFOS : %d HP\t", player->hp);
 	printf("%s\t", player->weapon.name);
 	printf("%s\t", player->shield.name);
 	printf("%s\n", player->armor.name);
-	printf("%d\t", enemy->hp);
+	printf("ENEMY INFOS : %d HP\t", enemy->hp);
 	printf("%s\t", enemy->weapon.name);
 	printf("%s\t", enemy->shield.name);
 	printf("%s\n\n", enemy->armor.name);

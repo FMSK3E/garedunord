@@ -27,21 +27,23 @@ typedef struct		s_defensive
 
 typedef struct		s_characters
 {
+	char	name[8];
 	int		hp;
 	struct	s_offensive weapon;
 	struct	s_defensive shield;
 	struct	s_defensive armor;
 	int		dodge_next_attack;
+	int		bonus_next_attack;
 	int		movement_malus_roll;
 }					t_characters;
 
 //				structures_init.c
 t_offensive		*offensive_init(char *name, int atk, int min_range, int max_range, int crit_chance, int can_attack_twice);
 t_defensive		*defensive_init(char *name, int def, int movement_malus);
-t_characters	*characters_init(void);
+t_characters	*characters_init(char *name);
 
 //				select_stuff.c
-void			ft_stuff_steps(int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection);
+void			ft_stuff_steps(int *range, int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection);
 void			ft_step1_stuff(int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers);
 void			ft_step2_stuff(int *current_step, t_characters *player, t_characters *enemy, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection);
 void			ft_step3_stuff(int *current_step, t_characters *player, t_characters *enemy, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection);
@@ -51,11 +53,17 @@ void			ft_select_defensive(char choice, int step, t_characters *character, t_def
 //				print_stuff.c
 void			ft_print_offensive(t_offensive weapon);
 void			ft_print_defensive(t_defensive protection);
-void			ft_print_stuff(t_characters *player, t_characters *enemy);
+void			ft_print_stuff(int *range, t_characters *player, t_characters *enemy);
 
 //				turns.c
-void			turns(t_characters *player, t_characters *enemy);
+void			ft_turns_manager(int *range, t_characters *player, t_characters *enemy);
 void			player_turn(int *range, t_characters *player, t_characters *enemy);
 void			enemy_turn(int *range, t_characters *player, t_characters *enemy);
 void			endgame(t_characters *player, t_characters *enemy);
+
+//				actions.c
+int				ft_attack(t_characters *attacker, t_characters *defender);
+int				ft_dodge(t_characters *character);
+int				ft_move(int *range, t_characters *character);
+
 #endif

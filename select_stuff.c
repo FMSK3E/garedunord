@@ -1,6 +1,6 @@
 #include "includes/main_header.h"
 
-void			ft_stuff_steps(int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection)
+void			ft_stuff_steps(int *range, int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection)
 {
 	int weapon_is_bow;
 
@@ -10,7 +10,7 @@ void			ft_stuff_steps(int *current_step, t_characters *player, t_characters *ene
 	(*current_step)++;
 	ft_step3_stuff(current_step, player, enemy, small_shield, large_shield, light_armor, heavy_armor, no_protection);
 	(*current_step)++;
-	ft_print_stuff(player, enemy);
+	ft_print_stuff(range, player, enemy);
 }
 
 void			ft_step1_stuff(int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers)

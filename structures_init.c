@@ -1,12 +1,14 @@
 #include "includes/main_header.h"
 
-t_characters	*characters_init(void)
+t_characters	*characters_init(char *name)
 {
 	t_characters	*character;
 
 	character = malloc(sizeof(t_characters));
+	strcpy(character->name, name);
 	character->hp = 100;
 	character->dodge_next_attack = 0;
+	character->bonus_next_attack = 0;
 	character->movement_malus_roll = 0;
 	return (character);
 }
