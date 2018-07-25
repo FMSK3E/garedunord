@@ -22,7 +22,7 @@ int		main(void)
 	range = 5;
 	printf("\n\nNARRATOR : Welcome to Gare du Nord v2 !\n");
 	ft_stuff_steps(&range, &current_step, player, enemy, sword, axe, spear, bow, daggers, small_shield, large_shield, light_armor, heavy_armor, no_protection);
-	printf("NARRATOR : Now that both of you have stuff, fight to death ! owo\n");
+	printf("NARRATOR : Now that both of you have stuff, fight to death ! OwO\n\n\n");
 	ft_turns_manager(&range, player, enemy);
 	free(player);
 	free(enemy);

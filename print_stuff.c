@@ -22,8 +22,8 @@ void			ft_print_offensive(t_offensive weapon)
 	printf("weapon's critical strike chance : %d\n", weapon.crit_chance);
 	if (strstr(weapon.name, "daggers"))
 		printf("The weapon attacks twice !\n\n");
-	else if (strstr(weapon.name, "bow"))
-		printf("You cannot have a shield if you take the bow !\n\n");
+	else if (strstr(weapon.name, "bow") || strstr(weapon.name, "daggers"))
+		printf("You cannot have a shield if you take that weapon !\n\n");
 	else
 		printf("\n");
 }

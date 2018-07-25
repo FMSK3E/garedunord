@@ -15,8 +15,8 @@ void			ft_stuff_steps(int *range, int *current_step, t_characters *player, t_cha
 
 void			ft_step1_stuff(int *current_step, t_characters *player, t_characters *enemy, t_offensive *sword, t_offensive *axe, t_offensive *spear, t_offensive *bow, t_offensive *daggers)
 {
-	char stuff_choice;
-	int next_step;
+	char	stuff_choice;
+	int		next_step;
 
 	next_step = 0;
 	printf("NARRATOR : Firstly you have to pick a weapon : 1 for the sword, 2 for the axe, 3 for the spear, 4 for the bow, 5 for the daggers, 0 for infos about the weapons !\n");
@@ -32,17 +32,17 @@ void			ft_step1_stuff(int *current_step, t_characters *player, t_characters *ene
 		else
 			printf("NARRATOR : Pick a valid number, dumbfuck !\n");
 	}
-	stuff_choice = (rand() % 4 + 1) + '0';
+	stuff_choice = (rand() % 5 + 1) + '0';
 	ft_select_offensive(stuff_choice, enemy, sword, axe, spear, bow, daggers);
 }
 
 void			ft_step2_stuff(int *current_step, t_characters *player, t_characters *enemy, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection)
 {
-	char stuff_choice;
-	int next_step;
+	char 	stuff_choice;
+	int		next_step;
 
 	next_step = 0;
-	if (strstr(player->weapon.name, "bow"))
+	if (strstr(player->weapon.name, "bow") || strstr(player->weapon.name, "daggers"))
 	{
 		ft_select_defensive('3', *current_step, player, small_shield, large_shield, light_armor, heavy_armor, no_protection);
 		next_step++;
@@ -63,22 +63,22 @@ void			ft_step2_stuff(int *current_step, t_characters *player, t_characters *ene
 				printf("NARRATOR : Pick a valid number, dumbfuck !\n");
 		}
 	}
-	if (strstr(enemy->weapon.name, "bow"))
+	if (strstr(enemy->weapon.name, "bow") || strstr(enemy->weapon.name, "daggers"))
 	{
 		ft_select_defensive('3', *current_step, enemy, small_shield, large_shield, light_armor, heavy_armor, no_protection);
 		next_step++;
 	}
 	else
 	{
-		stuff_choice = (rand() % 2 + 1) + '0';
+		stuff_choice = (rand() % 3 + 1) + '0';
 		ft_select_defensive(stuff_choice, *current_step, enemy, small_shield, large_shield, light_armor, heavy_armor, no_protection);
 	}
 }
 
 void			ft_step3_stuff(int *current_step, t_characters *player, t_characters *enemy, t_defensive *small_shield, t_defensive *large_shield, t_defensive *light_armor, t_defensive *heavy_armor, t_defensive *no_protection)
 {
-	char stuff_choice;
-	int next_step;
+	char	stuff_choice;
+	int		next_step;
 
 	next_step = 0;
 	printf("NARRATOR : Do you want to wear an armor ? 1 for a light armor, 2 for a heavy armor, 3 for nothing, 0 for infos about the two armors !\n");
@@ -94,7 +94,7 @@ void			ft_step3_stuff(int *current_step, t_characters *player, t_characters *ene
 		else
 			printf("NARRATOR : Pick a valid number, dumbfuck !\n");
 	}
-	stuff_choice = (rand() % 2 + 1) + '0';
+	stuff_choice = (rand() % 3 + 1) + '0';
 	ft_select_defensive(stuff_choice, *current_step, enemy, small_shield, large_shield, light_armor, heavy_armor, no_protection);
 }
 

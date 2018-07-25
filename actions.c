@@ -1,6 +1,6 @@
 #include "includes/main_header.h"
 
-int				ft_attack(t_characters *attacker, t_characters *defender)
+int				ft_attack(int daggers, t_characters *attacker, t_characters *defender)
 {
 	int		random;
 	int		critical;
@@ -35,6 +35,8 @@ int				ft_attack(t_characters *attacker, t_characters *defender)
 	printf("%s Inflicted %d to %s !\n", attacker->name, damage, defender->name);
 	defender->hp -= damage;
 	defender->dodge_next_attack = 0;
+	if (strstr(attacker->weapon.name, "daggers") && !daggers)
+		ft_attack(1, attacker, defender);
 	attacker->bonus_next_attack = 0;
 	return (1);
 }

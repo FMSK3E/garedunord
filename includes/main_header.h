@@ -10,31 +10,31 @@ enum {YES, NO};
 
 typedef struct		s_offensive
 {
-	char	name[15];
-	int		atk;
-	int		min_range;
-	int		max_range;
-	int		crit_chance;
-	int		can_attack_twice;
+	char			name[15];
+	int				atk;
+	int				min_range;
+	int				max_range;
+	int				crit_chance;
+	int				can_attack_twice;
 }					t_offensive;
 
 typedef struct		s_defensive
 {
-	char	name[15];
-	int		def;
-	int		movement_malus;
+	char			name[15];
+	int				def;
+	int				movement_malus;
 }					t_defensive;
 
 typedef struct		s_characters
 {
-	char	name[8];
-	int		hp;
-	struct	s_offensive weapon;
-	struct	s_defensive shield;
-	struct	s_defensive armor;
-	int		dodge_next_attack;
-	int		bonus_next_attack;
-	int		movement_malus_roll;
+	char			name[8];
+	int				hp;
+	t_offensive		weapon;
+	t_defensive		shield;
+	t_defensive		armor;
+	int				dodge_next_attack;
+	int				bonus_next_attack;
+	int				movement_malus_roll;
 }					t_characters;
 
 //				structures_init.c
@@ -62,7 +62,7 @@ void			enemy_turn(int *range, t_characters *player, t_characters *enemy);
 void			endgame(t_characters *player, t_characters *enemy);
 
 //				actions.c
-int				ft_attack(t_characters *attacker, t_characters *defender);
+int				ft_attack(int daggers, t_characters *attacker, t_characters *defender);
 int				ft_dodge(t_characters *character);
 int				ft_move(int *range, t_characters *character);
 
