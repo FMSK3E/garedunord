@@ -11,21 +11,21 @@ void			ft_turns_manager(int *range, t_characters *player, t_characters *enemy)
 	{
 		if (turn == 0)
 		{
-			player_turn(range, player, enemy);
+			ft_player_turn(range, player, enemy);
 			turn++;
 		}
 		else
 		{
-			enemy_turn(range, player, enemy);
+			ft_enemy_turn(range, player, enemy);
 			turn--;
 		}
 		if (player->hp <= 0 || enemy->hp <= 0)
 			game_over = 1;
 	}
-	endgame(player, enemy);
+	ft_endgame(player, enemy);
 }
 
-void			player_turn(int *range, t_characters *player, t_characters *enemy)
+void			ft_player_turn(int *range, t_characters *player, t_characters *enemy)
 {
 	char order[5];
 	int turn_ok;
@@ -54,7 +54,7 @@ void			player_turn(int *range, t_characters *player, t_characters *enemy)
 	}
 	printf("\n");
 }
-void			enemy_turn(int *range, t_characters *player, t_characters *enemy)
+void			ft_enemy_turn(int *range, t_characters *player, t_characters *enemy)
 {
 	int random;
 
@@ -80,7 +80,7 @@ void			enemy_turn(int *range, t_characters *player, t_characters *enemy)
 	printf("\n");
 }
 
-void			endgame(t_characters *player, t_characters *enemy)
+void			ft_endgame(t_characters *player, t_characters *enemy)
 {
 	printf("NARRATOR : The game is over !\n");
 	if (player->hp > 0)

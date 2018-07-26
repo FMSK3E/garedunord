@@ -57,9 +57,9 @@ void			ft_print_stuff(int *range, t_characters *player, t_characters *enemy);
 
 //				turns.c
 void			ft_turns_manager(int *range, t_characters *player, t_characters *enemy);
-void			player_turn(int *range, t_characters *player, t_characters *enemy);
-void			enemy_turn(int *range, t_characters *player, t_characters *enemy);
-void			endgame(t_characters *player, t_characters *enemy);
+void			ft_player_turn(int *range, t_characters *player, t_characters *enemy);
+void			ft_enemy_turn(int *range, t_characters *player, t_characters *enemy);
+void			ft_endgame(t_characters *player, t_characters *enemy);
 
 //				actions.c
 int				ft_attack(int daggers, t_characters *attacker, t_characters *defender);
